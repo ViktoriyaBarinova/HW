@@ -1,0 +1,22 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main {
+    public static void main(String[] args) {
+        Map<Integer, String> hashMap = new HashMap<>();
+        hashMap.put(8, "Стол");
+        hashMap.put(7, "Стул");
+        hashMap.put(12, "Книга");
+        hashMap.put(56, "Доска");
+
+        System.out.println(hashMap);
+        System.out.println(reverse(hashMap));
+    }
+
+    public static <K, V> HashMap<V, K> reverse(Map<K, V> map) {
+        HashMap<V, K> reverse = new HashMap<V, K>();
+        for (Map.Entry<K, V> entry : map.entrySet())
+            reverse.put(entry.getValue(), entry.getKey());
+        return reverse;
+    }
+}
